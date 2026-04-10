@@ -6,7 +6,7 @@ import { NavLinks } from "@/components/ui/navigation/NavLinks";
 
 export const Footer = () => {
   return (
-    <footer className="w-full bg-gray-900 text-white">
+    <footer className="w-full bg-black text-white">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
         <div className="flex justify-center md:justify-start h-full">
           <h2 className="text-2xl font-bold">

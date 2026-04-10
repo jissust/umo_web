@@ -9,7 +9,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-gray-900 text-white px-6 py-8 fixed top-0 z-50">
+    <nav className="w-full bg-black text-white px-6 py-8 fixed top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <h1 className="text-xl font-bold">
           <Link href="/" className="hover:text-gray-300">
