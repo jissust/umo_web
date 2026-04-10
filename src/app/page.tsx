@@ -1,9 +1,9 @@
-import { Hero } from "@/components/blocks/hero/Hero";
+import { HeroVideo } from "@/components/blocks/heroVideo/HeroVideo";
 
 export default function Home() {
   return (
     <>
-     <Hero /> 
+     <HeroVideo /> 
     </>
   );
 }
