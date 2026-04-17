@@ -24,9 +24,14 @@ export const HeroVideo = () => {
             FIRE & STAKEHOUSE - CALA D'OR
           </p>
 
-          <button className="mt-6 bg-orange-400 text-black px-6 py-3 rounded-md font-medium hover:bg-orange-300 transition">
+          <a
+            href="https://wa.me/34641467880"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex mt-6 bg-orange-400 text-black px-6 py-3 rounded-md font-medium hover:bg-orange-300 transition"
+          >
             Reservar Mesa →
-          </button>
+          </a>
         </div>
       </div>
     </section>
