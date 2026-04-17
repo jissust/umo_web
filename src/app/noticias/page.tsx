@@ -69,9 +69,7 @@ const allNews: NewsItem[] = [
 const ITEMS_PER_PAGE = 6;
 
 export default function NewsPage() {
-  const [visibleItems, setVisibleItems] = useState<NewsItem[]>(
-    allNews.slice(0, ITEMS_PER_PAGE), // ✅ inicialización correcta
-  );
+  const [visibleItems, setVisibleItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(false);
 
   const loaderRef = useRef<HTMLDivElement | null>(null);
@@ -91,21 +89,26 @@ export default function NewsPage() {
   }, [loading, visibleItems]);
 
   useEffect(() => {
+    if (!loaderRef.current) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
+        const entry = entries[0];
+
+        if (entry.isIntersecting && !loading) {
           loadMore();
         }
       },
-      { threshold: 1 },
+      {
+        threshold: 0.1,
+        rootMargin: "100px", // 👈 mejora UX (carga antes)
+      },
     );
 
-    if (loaderRef.current) {
-      observer.observe(loaderRef.current);
-    }
+    observer.observe(loaderRef.current);
 
     return () => observer.disconnect();
-  }, [loadMore]);
+  }, [loadMore, loading]);
 
   return (
     <div className="min-h-screen flex w-full pt-28 pb-6">
