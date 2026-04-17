@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import { NewsCard } from "@/components/ui/newsCard/NewsCard";
 
 const news = [
   {
@@ -37,35 +36,7 @@ export const LatestNews = () => {
         {/* Grid */}
         <div className="flex flex-wrap justify-center gap-8">
           {news.map((item) => (
-            <article key={item.id} className="w-full sm:w-[320px] lg:w-[360px]">
-              {/* Imagen */}
-              <div className="relative w-full aspect-[4/3] overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Contenido */}
-              <div className="mt-4">
-                <p className="text-sm text-gray-500">{item.date}</p>
-
-                <h3 className="mt-2 text-xl font-semibold">{item.title}</h3>
-
-                <p className="mt-2 text-gray-600 line-clamp-2">
-                  {item.description}
-                </p>
-                
-                <Link
-                  href={`/notice/${item.slug}`}
-                  className="inline-block mt-4 text-sm font-medium text-black underline hover:text-gray-700 transition"
-                >
-                  Leer más →
-                </Link>
-              </div>
-            </article>
+            <NewsCard key={item.id} item={item} />
           ))}
         </div>
       </div>
