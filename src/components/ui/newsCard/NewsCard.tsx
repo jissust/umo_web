@@ -9,7 +9,7 @@ type Props = {
 export const NewsCard = ({ item }: Props) => {
   return (
     <article className="w-full sm:w-[320px] lg:w-[360px] group">
-      <Link href={`/notice/${item.slug}`} className="block">
+      <Link href={`/noticia/${item.slug}`} className="block">
         {/* Imagen */}
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <Image
