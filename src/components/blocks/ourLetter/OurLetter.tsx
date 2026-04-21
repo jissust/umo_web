@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ButtonLink } from "@/components/ui/buttonLink/ButtonLink";
 
 export const OurLetter = () => {
   return (
@@ -13,12 +13,16 @@ export const OurLetter = () => {
           ocasión.
         </p>
 
-        <Link
+        <ButtonLink
           href="/carta"
-          className="inline-flex items-center mt-8 px-8 py-3 bg-orange-400 text-black rounded-md font-semibold hover:bg-orange-300 transition"
+          bgColor="bg-orange-400"
+          textColor="text-black"
+          hoverBgColor="hover:bg-orange-600"
+          hoverTextColor="hover:bg-white"
+          target="_self"
         >
           Ver carta →
-        </Link>
+        </ButtonLink> 
       </div>
     </section>
   );

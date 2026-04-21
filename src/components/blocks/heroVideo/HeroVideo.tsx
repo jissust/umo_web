@@ -1,3 +1,5 @@
+import { ButtonLink } from "@/components/ui/buttonLink/ButtonLink";
+
 export const HeroVideo = () => {
   return (
     <section className="relative w-full h-[90vh]">
@@ -24,14 +26,16 @@ export const HeroVideo = () => {
             FIRE & STAKEHOUSE - CALA D'OR
           </p>
 
-          <a
+          <ButtonLink
             href="https://wa.me/34641467880"
+            bgColor="bg-gray-800"
+            textColor="text-white"
+            hoverBgColor="hover:bg-white"
+            hoverTextColor="hover:text-gray-800"
             target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex mt-6 bg-orange-400 text-black px-6 py-3 rounded-md font-medium hover:bg-orange-300 transition"
           >
             Reservar Mesa →
-          </a>
+          </ButtonLink>
         </div>
       </div>
     </section>
