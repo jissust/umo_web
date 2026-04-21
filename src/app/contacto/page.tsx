@@ -5,12 +5,12 @@ export default function Contacto() {
   return (
     <div className="min-h-screen w-full pt-28 pb-6">
       <div className="max-w-7xl mx-auto px-6">
-        <h1>Contacto</h1>
-        <p>
+        <h1 className="text-4xl md:text-6xl font-bold pb-2">Contacto</h1>
+        <p className="text-sm md:text-base pb-5">
           Podés encontrarnos o comunicarte con nosotros a través de los
           siguientes medios.
         </p>
-        <div className="flex items-center">
+        <div className="flex items-center text-sm md:text-base pb-1">
           <FaWhatsapp />{" "}
           <a
             href="https://wa.me/34641467880"
@@ -20,11 +20,11 @@ export default function Contacto() {
             +34 641 46 78 80
           </a>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center text-sm md:text-base pb-1">
           <FaPhone />
           <a href="tel:+34871612605">+34 871 612 605</a>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-sm md:text-base pb-1">
           <FaInstagram />
           <a
             href="https://www.instagram.com/umo.calador26"
@@ -34,7 +34,7 @@ export default function Contacto() {
             @umo.calador26
           </a>
         </div>
-        <div className="flex items-center gap-2 pb-10">
+        <div className="flex items-center gap-2 pb-10 text-sm md:text-base pb-1">
           <FaMailBulk />
           <a href="mailto:umo.calador@gmail.com">umo.calador@gmail.com</a>
         </div>

@@ -18,7 +18,7 @@ export const MenuCategories = ({ categories }: Props) => {
               href={cat.file}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-3 flex justify-center"
+              className="text-sm md:text-base font-bold py-3 flex justify-center"
               style={{
                 display: "flex",
                 alignItems: "center",

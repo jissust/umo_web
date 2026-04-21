@@ -24,15 +24,15 @@ export const NewsCard = ({ item }: Props) => {
         <div className="mt-4">
           <p className="text-sm text-gray-500">{item.date}</p>
 
-          <h3 className="mt-2 text-xl font-semibold group-hover:underline">
+          <h3 className="mt-2  text-base md:text-lg font-bold group-hover:underline">
             {item.title}
           </h3>
 
-          <p className="mt-2 text-gray-600 line-clamp-2">
+          <p className="mt-2 text-gray-600 line-clamp-2 text-sm md:text-base">
             {item.description}
           </p>
 
-          <span className="inline-block mt-4 text-sm font-medium text-black underline group-hover:text-gray-700 transition">
+          <span className="inline-block mt-4 text-sm text-black group-hover:text-gray-700 transition">
             Leer más →
           </span>
         </div>

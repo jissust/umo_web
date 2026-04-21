@@ -19,11 +19,11 @@ export default async function NoticiaDetalle({ params }: Props) {
     <article className="min-h-screen pt-28 pb-16 px-6">
       <div className="max-w-3xl mx-auto">
         
-        <h1 className="text-3xl md:text-4xl font-bold text-center">
+        <h1 className="text-4xl md:text-6xl font-bold text-center">
           {noticia.title}
         </h1>
 
-        <p className="mt-4 text-lg text-gray-600 text-center">
+        <p className="mt-4 text-lg text-gray-600 text-center ">
           {noticia.description}
         </p>
 
@@ -40,7 +40,7 @@ export default async function NoticiaDetalle({ params }: Props) {
           {noticia.date}
         </p>
 
-        <div className="mt-8 text-gray-800 leading-relaxed space-y-4">
+        <div className="mt-4 text-gray-800 leading-relaxed space-y-4 text-sm md:text-base">
           <p>{noticia.text}</p>
         </div>
       </div>

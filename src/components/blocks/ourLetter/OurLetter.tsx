@@ -4,11 +4,11 @@ export const OurLetter = () => {
   return (
     <section className="w-full py-24 bg-gray-500 text-white">
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-5xl font-bold">
+        <h1 className="text-4xl md:text-6xl font-bold">
           Descubrí nuestra carta
-        </h2>
+        </h1>
 
-        <p className="mt-4 text-gray-300">
+        <p className="mt-4 text-gray-300 text-sm md:text-base">
           Explorá sabores únicos y experiencias culinarias diseñadas para cada
           ocasión.
         </p>

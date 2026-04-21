@@ -6,9 +6,9 @@ export const Presentation = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold">Sobre nosotros</h2>
+            <h1 className="text-4xl md:text-6xl font-bold">Sobre nosotros</h1>
 
-            <p className="mt-4 text-gray-600 leading-relaxed">
+            <p className="mt-4 text-gray-600 leading-relaxed text-sm md:text-base">
               Somos un restaurante dedicado a ofrecer experiencias culinarias
               únicas, combinando tradición y creatividad en cada plato. Nuestro
               compromiso es brindar calidad, sabor y un ambiente inolvidable

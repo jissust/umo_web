@@ -32,12 +32,10 @@ export default function CartaPage() {
           style={{ display: "block", margin: "0 auto" }}
         />
 
-        <h1 className="flex justify-center">Menú del restaurante</h1>
-
-        <p className="flex justify-center pb-5">
+        <h2 className="flex justify-center py-5 text-sm md:text-base">
           Bienvenido a nuestro restaurante. Descubrí nuestras opciones de menú
           cuidadosamente preparadas.
-        </p>
+        </h2>
 
         <MenuCategories categories={categories} />
       </div>
