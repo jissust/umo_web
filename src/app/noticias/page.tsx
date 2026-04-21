@@ -53,8 +53,8 @@ export default function NewsPage() {
   return (
     <div className="min-h-screen flex w-full pt-28 pb-6">
       <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-4xl md:text-6xl font-bold flex justify-center pb-2">Noticias</h1>
-        <p className="flex justify-center pb-5 text-sm md:text-base">
+        <h1 className="text-4xl md:text-6xl font-bold flex justify-center pb-5 text-white">Noticias</h1>
+        <p className="flex justify-center pb-5 text-sm md:text-base text-white">
           Enterate de todas las novedades y eventos.
         </p>
         {/* GRID */}

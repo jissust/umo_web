@@ -15,10 +15,8 @@ export const OurLetter = () => {
 
         <ButtonLink
           href="/carta"
-          bgColor="bg-orange-400"
+          bgColor="bg-gradient-to-b from-[#F1DF7D] to-[#E19025]"
           textColor="text-black"
-          hoverBgColor="hover:bg-orange-600"
-          hoverTextColor="hover:bg-white"
           target="_self"
         >
           Ver carta →

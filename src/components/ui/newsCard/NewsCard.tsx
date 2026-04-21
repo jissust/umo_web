@@ -8,7 +8,7 @@ type Props = {
 
 export const NewsCard = ({ item }: Props) => {
   return (
-    <article className="w-full sm:w-[320px] lg:w-[360px] group">
+    <article className="w-full sm:w-[320px] lg:w-[360px] group text-white">
       <Link href={`/noticia/${item.slug}`} className="block">
         {/* Imagen */}
         <div className="relative w-full aspect-[4/3] overflow-hidden">
@@ -22,17 +22,17 @@ export const NewsCard = ({ item }: Props) => {
 
         {/* Contenido */}
         <div className="mt-4">
-          <p className="text-sm text-gray-500">{item.date}</p>
+          <p className="text-sm text-white">{item.date}</p>
 
           <h3 className="mt-2  text-base md:text-lg font-bold group-hover:underline">
             {item.title}
           </h3>
 
-          <p className="mt-2 text-gray-600 line-clamp-2 text-sm md:text-base">
+          <p className="mt-2 text-white line-clamp-2 text-sm md:text-base">
             {item.description}
           </p>
 
-          <span className="inline-block mt-4 text-sm text-black group-hover:text-gray-700 transition">
+          <span className="inline-block mt-4 text-sm text-white group-hover:text-gray-300 transition">
             Leer más →
           </span>
         </div>

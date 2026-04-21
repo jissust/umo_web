@@ -16,14 +16,14 @@ export default async function NoticiaDetalle({ params }: Props) {
   if (!noticia) return notFound();
 
   return (
-    <article className="min-h-screen pt-28 pb-16 px-6">
-      <div className="max-w-3xl mx-auto">
+    <article className="min-h-screen pt-30 pb-16 px-6 text-white">
+      <div className="max-w-4xl mx-auto">
         
         <h1 className="text-4xl md:text-6xl font-bold text-center">
           {noticia.title}
         </h1>
 
-        <p className="mt-4 text-lg text-gray-600 text-center ">
+        <p className="mt-4 text-lg text-white text-center ">
           {noticia.description}
         </p>
 
@@ -36,11 +36,11 @@ export default async function NoticiaDetalle({ params }: Props) {
           />
         </div>
 
-        <p className="mt-4 text-sm text-gray-500">
+        <p className="mt-4 text-sm text-white">
           {noticia.date}
         </p>
 
-        <div className="mt-4 text-gray-800 leading-relaxed space-y-4 text-sm md:text-base">
+        <div className="mt-4 text-white leading-relaxed space-y-4 text-sm md:text-base">
           <p>{noticia.text}</p>
         </div>
       </div>

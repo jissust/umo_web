@@ -20,7 +20,7 @@ export const ButtonLink = ({
   target = "_self",
 }: ButtonLinkProps) => {
   const baseStyles = `
-    inline-flex items-center mt-6 px-6 py-3 rounded-md font-medium transition
+    inline-flex items-center mt-6 px-6 py-3 rounded-sm font-medium transition text-sm
     ${bgColor} ${textColor} ${hoverBgColor} ${hoverTextColor}
   `;
   const isExternal = href.startsWith("http");

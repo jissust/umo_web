@@ -28,13 +28,11 @@ export const HeroVideo = () => {
 
           <ButtonLink
             href="https://wa.me/34641467880"
-            bgColor="bg-gray-800"
-            textColor="text-white"
-            hoverBgColor="hover:bg-white"
-            hoverTextColor="hover:text-gray-800"
+            bgColor="bg-gradient-to-b from-[#F1DF7D] to-[#E19025]"
+            textColor="text-black"
             target="_blank"
           >
-            Reservar Mesa →
+            Reservar →
           </ButtonLink>
         </div>
       </div>
