@@ -1,21 +1,22 @@
 import Image from "next/image";
 import { MenuCategories } from "@/components/blocks/menuCategories/MenuCategories";
+import { FaUtensils, FaWineGlass, FaIceCream } from "react-icons/fa";
 
 const categories = [
   {
     name: "Entradas",
-    icon: "🍽️",
+    icon: <FaUtensils />,
     file: "/pdf/entradas.pdf",
   },
   {
-    name: "Platos principales",
-    icon: "🍝",
-    file: "/pdf/principales.pdf",
+    name: "Bebidas",
+    icon: <FaWineGlass />,
+    file: "/pdf/bebidas.pdf",
   },
   {
-    name: "Bebidas",
-    icon: "🍷",
-    file: "/pdf/bebidas.pdf",
+    name: "Postres",
+    icon: <FaIceCream />,
+    file: "/pdf/postres.pdf",
   },
 ];
 
