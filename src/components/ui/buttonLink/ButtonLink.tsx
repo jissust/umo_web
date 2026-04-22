@@ -5,23 +5,27 @@ type ButtonLinkProps = {
   children: React.ReactNode;
   bgColor?: string;
   textColor?: string;
+  borderColor?: string;
   hoverBgColor?: string;
   hoverTextColor?: string;
+  hoverBorderColor?: string;
   target?: "_blank" | "_self";
 };
 
 export const ButtonLink = ({
   href,
   children,
-  bgColor = "bg-orange-400",
+  bgColor = "bg-transparent",
   textColor = "text-black",
-  hoverBgColor = "hover:bg-orange-300",
+  borderColor = "border border-transparent border-2",
+  hoverBgColor = "hover:bg-black",
   hoverTextColor = "",
+  hoverBorderColor = "",
   target = "_self",
 }: ButtonLinkProps) => {
   const baseStyles = `
-    inline-flex items-center mt-6 px-6 py-3 rounded-sm font-medium transition text-sm
-    ${bgColor} ${textColor} ${hoverBgColor} ${hoverTextColor}
+    inline-flex items-center mt-6 px-10 py-3 rounded-3xl font-semibold transition text-sm
+    ${bgColor} ${textColor} ${borderColor} ${hoverBgColor} ${hoverTextColor} ${hoverBorderColor}
   `;
   const isExternal = href.startsWith("http");
   if (isExternal) {
