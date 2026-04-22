@@ -5,38 +5,63 @@ export default function Contacto() {
   return (
     <div className="min-h-screen w-full pt-28 pb-6">
       <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-4xl md:text-6xl font-bold pb-2 text-gold">Contacto</h1>
-        <p className="text-sm md:text-base pb-5 text-white">
+        <h1 className="text-4xl md:text-6xl font-bold pb-2 text-gold text-center">
+          Contacto
+        </h1>
+        <p className="text-sm md:text-base pb-5 text-white text-center">
           Podés encontrarnos o comunicarte con nosotros a través de los
           siguientes medios.
         </p>
-        <div className="flex items-center text-sm md:text-base pb-1 text-white">
-          <FaWhatsapp />
+        <div className="gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 pb-10">
           <a
             href="https://wa.me/34641467880"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex flex-col items-center justify-center
+              bg-gray-800 text-white
+              rounded-xl px-6 py-12
+              transition hover:bg-gray-700
+              h-full gap-5"
           >
-            +34 641 46 78 80
+            <FaWhatsapp className="text-4xl" />
+            <span>+34 641 46 78 80</span>
           </a>
-        </div>
-        <div className="flex items-center text-sm md:text-base pb-1 text-white">
-          <FaPhone />
-          <a href="tel:+34871612605">+34 871 612 605</a>
-        </div>
-        <div className="flex items-center gap-2 text-sm md:text-base pb-1 text-white">
-          <FaInstagram />
+          <a
+            href="tel:+34871612605"
+            className="flex flex-col items-center justify-center
+              bg-gray-800 text-white
+              rounded-xl px-6 py-12
+              transition hover:bg-gray-700
+              h-full gap-5"
+          >
+            <FaPhone className="text-4xl" />
+            <span>+34 871 612 605</span>
+          </a>
           <a
             href="https://www.instagram.com/umo.calador26"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex flex-col items-center justify-center
+              bg-gray-800 text-white
+              rounded-xl px-6 py-12
+              transition hover:bg-gray-700
+              h-full gap-5"
           >
-            @umo.calador26
+            <FaInstagram className="text-4xl" />
+            <span>@umo.calador26</span>
           </a>
-        </div>
-        <div className="flex items-center gap-2 pb-10 text-sm md:text-base pb-1 text-white">
-          <FaMailBulk />
-          <a href="mailto:umo.calador@gmail.com">umo.calador@gmail.com</a>
+          <a
+            href="mailto:umo.calador@gmail.com"
+            target="_blank"
+            className="flex flex-col items-center justify-center
+              bg-gray-800 text-white
+              rounded-xl px-6 py-12
+              transition hover:bg-gray-700
+              h-full gap-5"
+          >
+            <FaMailBulk className="text-4xl" />
+            <span>umo.calador@gmail.com</span>
+          </a>
         </div>
         <Map />
       </div>
