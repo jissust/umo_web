@@ -25,10 +25,10 @@ export default function CartaPage() {
     <div className="min-h-screen flex w-full pt-28 pb-6 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <Image
-          src="/next.svg"
-          alt="Nombre del restaurante"
-          width={150}
-          height={150}
+          src="/img/logo_blanco_554x718.png"
+          alt="UMO - Carta"
+          width={250}
+          height={250}
           priority
           style={{ display: "block", margin: "0 auto" }}
         />
