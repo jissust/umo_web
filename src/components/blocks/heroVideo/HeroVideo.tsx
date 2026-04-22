@@ -1,9 +1,10 @@
 import { ButtonLink } from "@/components/ui/buttonLink/ButtonLink";
+import Image from "next/image";
 
 export const HeroVideo = () => {
   return (
     <section className="relative w-full h-[90vh]">
-      {/* Video de fondo */}
+
       <video
         autoPlay
         muted
@@ -14,18 +15,18 @@ export const HeroVideo = () => {
         <source src="/hero_video.mp4" type="video/mp4" />
       </video>
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/60" />
 
-      {/* Contenido */}
       <div className="relative z-10 flex items-center h-full">
-        <div className="max-w-7xl mx-auto px-6 w-full">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">UMO</h1>
-
-          <p className="mt-4 text-lg text-gray-200 max-w-xl">
-            FIRE & STAKEHOUSE - CALA D'OR
-          </p>
-
+        <div className="max-w-7xl mx-auto px-6 w-full flex-col items-center gap-6 text-center">
+          <Image
+            src="/img/umo_logo_593x707.png"
+            alt="UMO logo"
+            width={400}
+            height={400}
+            priority
+            style={{ display: "block", margin: "0 auto" }}
+          />
           <ButtonLink
             href="https://wa.me/34641467880"
             bgColor="bg-gradient-to-b from-[#F1DF7D] to-[#E19025]"
