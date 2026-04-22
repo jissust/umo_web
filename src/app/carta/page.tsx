@@ -21,7 +21,7 @@ const categories = [
 
 export default function CartaPage() {
   return (
-    <div className="min-h-screen flex w-full pt-28 pb-6">
+    <div className="min-h-screen flex w-full pt-28 pb-6 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <Image
           src="/next.svg"
