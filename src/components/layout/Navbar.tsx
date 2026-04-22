@@ -29,7 +29,7 @@ export const Navbar = () => {
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-        <div className="hidden md:flex gap-6">
+        <div className="hidden md:flex gap-6 text-md">
           <NavLinks />
         </div>
       </div>

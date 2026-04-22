@@ -13,7 +13,7 @@ export const NavLinks = () => {
   };
 
   const linkClass = (path: string) =>
-    `font-semibold text-sm md:text-base hover:text-gold ${
+    `font-semibold hover:text-gold ${
       isActive(path) ? "text-gold" : "text-white"
     }`;
 
