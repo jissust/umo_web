@@ -35,6 +35,10 @@ body {
   background-attachment: fixed;
 }
 
+.text-gold {
+  @apply bg-gradient-to-b from-[#F1DF7D] to-[#E19025] bg-clip-text text-transparent;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
