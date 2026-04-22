@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { NavLinks } from "@/components/ui/navigation/NavLinks";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -11,7 +12,14 @@ export const Footer = () => {
         <div className="flex justify-center md:justify-start h-full">
           <h2 className="text-2xl font-bold">
             <Link href="/" className="hover:text-gray-300">
-              MiWeb
+              <Image
+                src="/img/umo_logo_593x707.png"
+                alt="UMO logo"
+                width={200}
+                height={200}
+                priority
+                style={{ display: "block", margin: "0 auto" }}
+              />
             </Link>
           </h2>
         </div>
@@ -21,10 +29,20 @@ export const Footer = () => {
         </div>
 
         <div className="flex justify-center md:justify-end gap-6 text-xl">
-          <a href="https://www.instagram.com/umo.calador26" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+          <a
+            href="https://www.instagram.com/umo.calador26"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-300"
+          >
             <FaInstagram />
           </a>
-          <a href="https://wa.me/34641467880" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+          <a
+            href="https://wa.me/34641467880"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-300"
+          >
             <FaWhatsapp />
           </a>
         </div>
