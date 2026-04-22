@@ -1,7 +1,7 @@
 // src/components/layout/Footer.tsx
 
 import Link from "next/link";
-import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { NavLinks } from "@/components/ui/navigation/NavLinks";
 
 export const Footer = () => {
@@ -21,14 +21,11 @@ export const Footer = () => {
         </div>
 
         <div className="flex justify-center md:justify-end gap-6 text-xl">
-          <a href="#" className="hover:text-gray-300">
+          <a href="https://www.instagram.com/umo.calador26" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
             <FaInstagram />
           </a>
-          <a href="#" className="hover:text-gray-300">
-            <FaFacebook />
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            <FaTwitter />
+          <a href="https://wa.me/34641467880" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+            <FaWhatsapp />
           </a>
         </div>
       </div>
