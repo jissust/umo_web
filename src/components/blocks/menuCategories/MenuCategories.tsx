@@ -1,6 +1,6 @@
 type Category = {
   name: string;
-  icon: string;
+  icon: React.ReactNode;
   file: string;
 };
 
