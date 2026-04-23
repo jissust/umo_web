@@ -1,7 +1,12 @@
+"use client";
 import { ButtonLink } from "@/components/ui/buttonLink/ButtonLink";
 import Image from "next/image";
+import { useLoading } from "@/context/LoadingContext";
+
 
 export const HeroVideo = () => {
+  const { setIsLoading } = useLoading();
+
   return (
     <section className="relative w-full h-[90vh]">
 
@@ -10,6 +15,7 @@ export const HeroVideo = () => {
         muted
         loop
         playsInline
+        onLoadedData={() => setIsLoading(false)}
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/hero_video.mp4" type="video/mp4" />
