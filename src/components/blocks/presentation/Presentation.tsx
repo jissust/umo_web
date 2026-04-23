@@ -16,8 +16,8 @@ export const Presentation = () => {
             </p>
           </div>
 
-          <div className="w-full">
-            <div className="relative aspect-square max-w-lg overflow-hidden">
+          <div className="flex justify-center">
+            <div className="relative aspect-square w-full sm:w-[70%] overflow-hidden">
               <Image
                 src="/img/presentation.jpg"
                 alt="Sobre nosotros"
