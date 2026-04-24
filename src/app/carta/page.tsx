@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: "https://umo-test-01.netlify.app/carta",
     images: [
       {
-        url: "https://umo-test-01.netlify.app/img/og-carta.jpg",
+        url: "https://umo-test-01.netlify.app/img/og-image.jpg",
         width: 1200,
         height: 630,
       },
