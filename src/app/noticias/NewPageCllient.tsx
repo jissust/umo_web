@@ -50,7 +50,7 @@ export default function NewsPage() {
   }, [loadMore, loading]);
 
   return (
-    <div className="min-h-screen flex w-full pt-28 pb-6">
+    <section className="min-h-screen flex w-full pt-28 pb-6">
       <div className="max-w-7xl mx-auto px-6">
         <h1 className="text-4xl md:text-6xl font-bold flex justify-center pb-5 text-gold">Noticias</h1>
         <p className="flex justify-center pb-5 text-sm md:text-base text-white">
@@ -81,6 +81,6 @@ export default function NewsPage() {
         {/* TRIGGER */}
         <div ref={loaderRef} className="h-10" />
       </div>
-    </div>
+    </section>
   );
 }
