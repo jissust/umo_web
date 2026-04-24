@@ -10,7 +10,8 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const noticia = newsMock.find((n) => n.slug === params.slug);
+  const { slug } = await params;
+  const noticia = newsMock.find((n) => n.slug === slug);
 
   if (!noticia) return {};
 
