@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function Contacto() {
   return (
-    <div className="min-h-screen w-full pt-28 pb-6">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="min-h-screen max-w-7xl mx-auto px-6 pt-28 pb-6 ">
+      <header>
         <h1 className="text-4xl md:text-6xl font-bold pb-2 text-gold text-center">
           Contacto
         </h1>
@@ -18,7 +18,9 @@ export default function Contacto() {
           Podés encontrarnos o comunicarte con nosotros a través de los
           siguientes medios.
         </p>
-        <div className="gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 pb-10">
+      </header>
+      <section className="gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 pb-10">
+        <address className="not-italic">
           <a
             href="https://wa.me/34641467880"
             target="_blank"
@@ -32,6 +34,8 @@ export default function Contacto() {
             <FaWhatsapp className="text-4xl" />
             <span>+34 641 46 78 80</span>
           </a>
+        </address>
+        <address className="not-italic">
           <a
             href="tel:+34871612605"
             className="flex flex-col items-center justify-center
@@ -43,6 +47,8 @@ export default function Contacto() {
             <FaPhone className="text-4xl" />
             <span>+34 871 612 605</span>
           </a>
+        </address>
+        <address className="not-italic">
           <a
             href="https://www.instagram.com/umo.calador26"
             target="_blank"
@@ -56,6 +62,8 @@ export default function Contacto() {
             <FaInstagram className="text-4xl" />
             <span>@umo.calador26</span>
           </a>
+        </address>
+        <address className="not-italic">
           <a
             href="mailto:info@umocalador.es"
             target="_blank"
@@ -68,9 +76,11 @@ export default function Contacto() {
             <FaMailBulk className="text-4xl" />
             <span>info@umocalador.es</span>
           </a>
-        </div>
+        </address>
+      </section>
+      <section>
         <Map />
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }

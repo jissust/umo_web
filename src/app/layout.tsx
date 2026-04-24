@@ -83,7 +83,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${geistMontserrat.variable} h-full antialiased`}
     >
       <body className="flex flex-col min-h-screen">

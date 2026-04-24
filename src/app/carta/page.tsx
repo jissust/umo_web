@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 
 export default function CartaPage() {
   return (
-    <div className="min-h-screen flex w-full pt-28 pb-6 text-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="min-h-screen text-white max-w-7xl mx-auto px-6 pt-28 pb-6">
+      <header>
         <Image
           src="/img/logo_blanco_554x718.png"
           alt="UMO - Carta"
@@ -43,9 +43,12 @@ export default function CartaPage() {
           Bienvenido a nuestro restaurante. Descubrí nuestras opciones de menú
           cuidadosamente preparadas.
         </h2>
+      </header>
 
+      <section>
         <MenuCategories categories={categories} />
-      </div>
-    </div>
+      </section>
+      
+    </section>
   );
 }

@@ -30,38 +30,35 @@ export default async function NoticiaDetalle({ params }: Props) {
   const { slug } = await params;
 
   const noticia = newsMock.find((n) => n.slug === slug);
-  
+
   if (!noticia) return notFound();
 
   return (
-    <article className="min-h-screen pt-30 pb-16 px-6 text-white">
-      <div className="max-w-4xl mx-auto">
-        
-        <h1 className="text-4xl md:text-6xl font-bold text-center">
-          {noticia.title}
-        </h1>
+    <article className="min-h-screen pt-30 pb-16 px-6 text-white max-w-4xl mx-auto">
+        <header>
+          <h1 className="text-4xl md:text-6xl font-bold text-center">
+            {noticia.title}
+          </h1>
 
-        <p className="mt-4 text-lg text-white text-center ">
-          {noticia.description}
-        </p>
+          <p className="mt-4 text-lg text-white text-center ">
+            {noticia.description}
+          </p>
+        </header>
 
-        <div className="mt-8 relative w-full h-[300px] md:h-[400px]">
+        <figure className="mt-8 mb-4 relative w-full h-[300px] md:h-[400px]">
           <Image
             src={noticia.image}
             alt={noticia.title}
             fill
             className="object-cover"
           />
-        </div>
+        </figure>
 
-        <p className="mt-4 text-sm text-white">
-          {noticia.date}
-        </p>
+        <time className="text-sm text-white">{noticia.date}</time>
 
-        <div className="mt-4 text-white leading-relaxed space-y-4 text-sm md:text-base">
+        <section className="mt-4 text-white leading-relaxed space-y-4 text-sm md:text-base">
           <p>{noticia.text}</p>
-        </div>
-      </div>
+        </section>
     </article>
   );
 }
