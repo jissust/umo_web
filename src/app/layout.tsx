@@ -4,25 +4,6 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      name: "UMO Fire & Steakhouse",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Cala D'Or",
-        addressCountry: "ES",
-      },
-      servesCuisine: "Steakhouse",
-      telephone: "+34871612605",
-      url: "https://umocalador.es",
-    }),
-  }}
-/>
-
 const geistMontserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
@@ -48,13 +29,12 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "UMO | Fire & Steakhouse",
-    description:
-      "Disfrutá de una experiencia gastronómica única en Cala D'Or.",
+    description: "Disfrutá de una experiencia gastronómica única en Cala D'Or.",
     url: "https://umocalador.es/",
     siteName: "UMO Restaurant",
     images: [
       {
-        url: "/img/og-image.jpg",
+        url: "https://umo-test-01.netlify.app/img/og-image.jpg",
         width: 1200,
         height: 630,
       },
@@ -90,6 +70,24 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Restaurant",
+              name: "UMO Fire & Steakhouse",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Cala D'Or",
+                addressCountry: "ES",
+              },
+              servesCuisine: "Steakhouse",
+              telephone: "+34871612605",
+              url: "https://umocalador.es",
+            }),
+          }}
+        />
       </body>
     </html>
   );

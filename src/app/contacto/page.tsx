@@ -5,6 +5,18 @@ import { FaInstagram, FaPhone, FaWhatsapp, FaMailBulk } from "react-icons/fa";
 export const metadata: Metadata = {
   title: "Contacto",
   description: "Contáctanos para más información sobre nuestro restaurante.",
+  openGraph: {
+    title: "Contacto - UMO | Fire & Steakhouse",
+    description: "Contáctanos para más información sobre nuestro restaurante.",
+    url: "https://umo-test-01.netlify.app/contacto",
+    images: [
+      {
+        url: "https://umo-test-01.netlify.app/img/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function Contacto() {

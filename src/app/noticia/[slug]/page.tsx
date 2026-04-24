@@ -20,8 +20,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: noticia.description,
     openGraph: {
       title: noticia.title,
+      type: "article",
+      url: `https://umo-test-01.netlify.app/noticias/${noticia.slug}`,
       description: noticia.description,
-      images: [noticia.image],
+      images:`https://umo-test-01.netlify.app${noticia.image}`,
     },
   };
 }
