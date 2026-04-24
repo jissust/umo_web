@@ -56,7 +56,7 @@ export const Footer = () => {
               <FaPhone />
             </a>
             <a
-              href="mailto:umo.calador@gmail.com"
+              href="mailto:info@umocalador.es"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-300 text-xl"

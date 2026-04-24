@@ -51,7 +51,7 @@ export default function Contacto() {
             <span>@umo.calador26</span>
           </a>
           <a
-            href="mailto:umo.calador@gmail.com"
+            href="mailto:info@umocalador.es"
             target="_blank"
             className="flex flex-col items-center justify-center
               bg-gray-800 text-white
@@ -60,7 +60,7 @@ export default function Contacto() {
               h-full gap-5"
           >
             <FaMailBulk className="text-4xl" />
-            <span>umo.calador@gmail.com</span>
+            <span>info@umocalador.es</span>
           </a>
         </div>
         <Map />
