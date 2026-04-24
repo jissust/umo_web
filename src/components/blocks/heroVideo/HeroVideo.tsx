@@ -26,10 +26,10 @@ export const HeroVideo = () => {
       <div className="relative z-10 flex items-center h-full">
         <div className="max-w-7xl mx-auto px-6 w-full flex-col items-center gap-6 text-center">
           <Image
-            src="/img/umo_logo_593x707.png"
+            src="/img/umo_logo_652x883.png"
             alt="UMO logo"
-            width={400}
-            height={400}
+            width={350}
+            height={350}
             priority
             style={{ display: "block", margin: "0 auto" }}
           />
