@@ -10,8 +10,51 @@ const geistMontserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "UMO | FIRE & STAKEHOUSE - CALA D'OR",
-  description: "Bienvenido a UMO | FIRE & STAKEHOUSE - CALA D'OR",
+  metadataBase: new URL("https://umocalador.netlify.app/"),
+
+  title: {
+    default: "UMO | Fire & Steakhouse - Cala D'Or",
+    template: "%s | UMO - Fire & Steakhouse - Cala D'Or",
+  },
+
+  description:
+    "Restaurante en Cala D'Or especializado en carnes a la parrilla y experiencias gastronómicas únicas.",
+
+  keywords: [
+    "restaurante cala dor",
+    "steakhouse",
+    "restaurante carnes",
+    "umo restaurant",
+  ],
+
+  openGraph: {
+    title: "UMO | Fire & Steakhouse",
+    description:
+      "Disfrutá de una experiencia gastronómica única en Cala D'Or.",
+    url: "https://umocalador.netlify.app/",
+    siteName: "UMO Restaurant",
+    images: [
+      {
+        url: "/img/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "es_ES",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "UMO | Fire & Steakhouse",
+    description: "Restaurante en Cala D'Or",
+    images: ["/img/og-image.jpg"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

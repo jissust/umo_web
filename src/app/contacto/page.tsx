@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import { Map } from "@/components/blocks/map/Map";
 import { FaInstagram, FaPhone, FaWhatsapp, FaMailBulk } from "react-icons/fa";
+
+export const metadata: Metadata = {
+  title: "Contacto",
+  description: "Contáctanos para más información sobre nuestro restaurante.",
+};
 
 export default function Contacto() {
   return (

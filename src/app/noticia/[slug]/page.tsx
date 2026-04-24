@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { newsMock } from "@/mocks/news";
@@ -7,6 +8,22 @@ type Props = {
     slug: string;
   };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const noticia = newsMock.find((n) => n.slug === params.slug);
+
+  if (!noticia) return {};
+
+  return {
+    title: noticia.title,
+    description: noticia.description,
+    openGraph: {
+      title: noticia.title,
+      description: noticia.description,
+      images: [noticia.image],
+    },
+  };
+}
 
 export default async function NoticiaDetalle({ params }: Props) {
   const { slug } = await params;

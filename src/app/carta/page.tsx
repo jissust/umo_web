@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { MenuCategories } from "@/components/blocks/menuCategories/MenuCategories";
 import { FaUtensils, FaWineGlass, FaIceCream } from "react-icons/fa";
@@ -19,6 +20,11 @@ const categories = [
     file: "/pdf/postres.pdf",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Carta",
+  description: "Descubrí nuestra carta con entradas, bebidas y postres.",
+};
 
 export default function CartaPage() {
   return (
