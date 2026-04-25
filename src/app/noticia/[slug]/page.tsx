@@ -21,9 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: noticia.title,
       type: "article",
-      url: `https://umo-test-01.netlify.app/noticias/${noticia.slug}`,
+      url: `https://umocalador.es/noticias/${noticia.slug}`,
       description: noticia.description,
-      images:`https://umo-test-01.netlify.app${noticia.image}`,
+      images:`https://umocalador.es${noticia.image}`,
     },
   };
 }

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "UMO Restaurant",
     images: [
       {
-        url: "https://umo-test-01.netlify.app/img/og-image.jpg",
+        url: "https://umocalador.es/img/og-image.jpg",
         width: 1200,
         height: 630,
       },

@@ -27,10 +27,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Carta  - UMO | Fire & Steakhouse",
     description: "Descubrí nuestra carta con entradas, bebidas y postres.",
-    url: "https://umo-test-01.netlify.app/carta",
+    url: "https://umocalador.es/carta",
     images: [
       {
-        url: "https://umo-test-01.netlify.app/img/og-image.jpg",
+        url: "https://umocalador.es/img/og-image.jpg",
         width: 1200,
         height: 630,
       },

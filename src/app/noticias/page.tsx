@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Noticias - UMO | Fire & Steakhouse",
     description: "Enterate de todas las novedades y eventos.",
-    url: "https://umo-test-01.netlify.app/noticias",
+    url: "https://umocalador.es/noticias",
     images: [
       {
-        url: "https://umo-test-01.netlify.app/img/og-image.jpg",
+        url: "https://umocalador.es/img/og-image.jpg",
         width: 1200,
         height: 630,
       },
