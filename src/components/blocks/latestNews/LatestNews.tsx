@@ -1,13 +1,39 @@
-import { NewsCard } from "@/components/ui/newsCard/NewsCard";
-import { newsMock } from "@/mocks/news";
+"use client";
 
-const news = newsMock.slice(0, 3);
+import { useEffect, useState } from "react";
+import { NewsCard } from "@/components/ui/newsCard/NewsCard";
+import { NewsItem } from "@/types/news";
 
 export const LatestNews = () => {
+  const [allNews, setAllNews] = useState<NewsItem[]>([]);
+  const [visibleItems, setVisibleItems] = useState<NewsItem[]>([]);
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const res = await fetch(`${API_URL}/api/news?populate=*`);
+        const data = await res.json();
+        console.log("Data fetched from Strapi:", data.data); // Verificar la estructura de los datos
+        console.log(data.data);
+        setAllNews(data.data);
+        setVisibleItems(data.data.slice(0, 3));
+      } catch (err) {
+        console.error("Error fetching news:", err);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
+  const news = allNews.slice(0, 3);
+
   return (
     <section className="w-full py-20">
       <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-4xl md:text-6xl font-bold flex justify-center pb-10 text-gold">Noticias</h1>
+        <h1 className="text-4xl md:text-6xl font-bold flex justify-center pb-10 text-gold">
+          Noticias
+        </h1>
         <div className="flex flex-wrap justify-center gap-8">
           {news.map((item) => (
             <NewsCard key={item.id} item={item} />

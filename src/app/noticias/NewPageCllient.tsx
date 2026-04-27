@@ -3,29 +3,49 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { NewsCard } from "@/components/ui/newsCard/NewsCard";
 import { NewsItem } from "@/types/news";
 import { SkeletonCard } from "@/components/ui/skeletons/SkeletonCard";
-import { newsMock } from "@/mocks/news";
+//import { newsMock } from "@/mocks/news";
 
 const ITEMS_PER_PAGE = 6;
 
 export default function NewsPage() {
   const [visibleItems, setVisibleItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(false);
+  const [allNews, setAllNews] = useState<NewsItem[]>([]);
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   const loaderRef = useRef<HTMLDivElement | null>(null);
 
+  // 🔥 FETCH DESDE STRAPI
+  useEffect(() => {
+    const fetchNews = async () => {
+      setLoading(true);
+      try {
+        const res = await fetch(`${API_URL}/api/news?populate=*`);
+        const data = await res.json();
+        setAllNews(data.data);
+        setVisibleItems(data.data.slice(0, ITEMS_PER_PAGE));
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching news:", err);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
   const loadMore = useCallback(() => {
     if (loading) return;
-    if (visibleItems.length >= newsMock.length) return;
+    if (visibleItems.length >= allNews.length) return;
 
     setLoading(true);
 
     setTimeout(() => {
-      const nextItems = newsMock.slice(0, visibleItems.length + ITEMS_PER_PAGE);
+      const nextItems = allNews.slice(0, visibleItems.length + ITEMS_PER_PAGE);
 
       setVisibleItems(nextItems);
       setLoading(false);
     }, 800);
-  }, [loading, visibleItems]);
+  }, [loading, visibleItems, allNews]);
 
   useEffect(() => {
     if (!loaderRef.current) return;
