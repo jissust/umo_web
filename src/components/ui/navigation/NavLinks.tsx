@@ -25,9 +25,9 @@ export const NavLinks = () => {
       <Link href="/contacto" className={linkClass("/contacto")}>
         Contacto
       </Link>
-      <Link href="/noticias" className={linkClass("/noticias")}>
+      {/* <Link href="/noticias" className={linkClass("/noticias")}>
         Noticias
-      </Link>
+      </Link> */}
     </>
   );
 };
