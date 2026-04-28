@@ -8,7 +8,7 @@ const ITEMS_PER_PAGE = 6;
 
 export default function NewsPage() {
   const [visibleItems, setVisibleItems] = useState<NewsItem[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [allNews, setAllNews] = useState<NewsItem[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -19,7 +19,9 @@ export default function NewsPage() {
     const fetchNews = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${API_URL}/api/news?populate=*&sort=publishedAt:desc`);
+        const res = await fetch(
+          `${API_URL}/api/news?populate=*&sort=publishedAt:desc`,
+        );
         const data = await res.json();
         setAllNews(data.data);
         setVisibleItems(data.data.slice(0, ITEMS_PER_PAGE));
@@ -81,13 +83,13 @@ export default function NewsPage() {
         </p>
       </header>
 
-      {isLoaded && allNews.length === 0 && (
+      {!loading && isLoaded && allNews.length === 0 && (
         <div className="text-center text-white py-10">
           No hay noticias disponibles
         </div>
       )}
 
-      {allNews.length > 0 && (
+      { !loading && allNews.length > 0 && (
         <section
           className="
             grid 
@@ -103,9 +105,14 @@ export default function NewsPage() {
               <NewsCard item={item} />
             </div>
           ))}
+        </section>
+      )}
 
-          {loading &&
-            Array.from({ length: 3 }).map((_, i) => <SkeletonCard key={i} />)}
+      {loading && (
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          {Array.from({ length: ITEMS_PER_PAGE }).map((_, i) => (
+            <SkeletonCard key={i} />
+          ))}
         </section>
       )}
 
