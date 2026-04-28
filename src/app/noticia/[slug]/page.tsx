@@ -64,22 +64,24 @@ export default async function NoticiaDetalle({ params }: Props) {
         </p>
       </header>
 
-      <figure className="mt-8 mb-4 relative w-full h-[300px] md:h-[400px]">
-        <Image
-          src={`${API_URL}${noticia.image[0]?.url}`}
-          alt={noticia.title}
-          unoptimized
-          fill
-          className="object-scale-down"
-        />
-      </figure>
-
+      {noticia.image && noticia.image[0] && (
+        <figure className="mt-8 mb-4 relative w-full h-[300px] md:h-[400px]">
+          <Image
+            src={`${API_URL}${noticia.image[0]?.url}`}
+            alt={noticia.title}
+            unoptimized
+            fill
+            className="object-scale-down"
+          />
+        </figure>
+      )}
+      
       <time className="text-sm text-white">
         {formatDate(noticia.publishedAt)}
       </time>
 
       <section className="mt-4 text-white leading-relaxed space-y-4 text-sm md:text-base">
-          <MarkdownRenderer content={noticia.content} />
+        <MarkdownRenderer content={noticia.content} />
       </section>
     </article>
   );

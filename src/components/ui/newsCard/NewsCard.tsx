@@ -9,13 +9,18 @@ type Props = {
 
 export const NewsCard = ({ item }: Props) => {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
-  
+
+  const imageUrl =
+    item.image && item.image[0]
+      ? `${API_URL}${item.image[0].url}`
+      : "/img/og-image.jpg";
+
   return (
     <article className="w-full sm:w-[320px] lg:w-[360px] group text-white">
       <Link href={`/noticia/${item.slug}`} className="block">
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <Image
-            src={`${API_URL}${item.image[0]?.url}`}
+            src={imageUrl}
             unoptimized
             alt={item.title}
             fill
