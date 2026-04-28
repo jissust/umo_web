@@ -3,7 +3,6 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { NewsCard } from "@/components/ui/newsCard/NewsCard";
 import { NewsItem } from "@/types/news";
 import { SkeletonCard } from "@/components/ui/skeletons/SkeletonCard";
-//import { newsMock } from "@/mocks/news";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -11,11 +10,11 @@ export default function NewsPage() {
   const [visibleItems, setVisibleItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [allNews, setAllNews] = useState<NewsItem[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   const loaderRef = useRef<HTMLDivElement | null>(null);
 
-  // 🔥 FETCH DESDE STRAPI
   useEffect(() => {
     const fetchNews = async () => {
       setLoading(true);
@@ -24,9 +23,11 @@ export default function NewsPage() {
         const data = await res.json();
         setAllNews(data.data);
         setVisibleItems(data.data.slice(0, ITEMS_PER_PAGE));
-        setLoading(false);
       } catch (err) {
         console.error("Error fetching news:", err);
+      } finally {
+        setLoading(false);
+        setIsLoaded(true);
       }
     };
 
@@ -80,8 +81,15 @@ export default function NewsPage() {
         </p>
       </header>
 
-      <section
-        className="
+      {isLoaded && allNews.length === 0 && (
+        <div className="text-center text-white py-10">
+          No hay noticias disponibles
+        </div>
+      )}
+
+      {allNews.length > 0 && (
+        <section
+          className="
             grid 
             grid-cols-1 
             sm:grid-cols-2 
@@ -89,16 +97,17 @@ export default function NewsPage() {
             gap-8 
             justify-items-center
           "
-      >
-        {visibleItems.map((item) => (
-          <div key={item.id} className="animate-fadeIn">
-            <NewsCard item={item} />
-          </div>
-        ))}
+        >
+          {visibleItems.map((item) => (
+            <div key={item.id} className="animate-fadeIn">
+              <NewsCard item={item} />
+            </div>
+          ))}
 
-        {loading &&
-          Array.from({ length: 3 }).map((_, i) => <SkeletonCard key={i} />)}
-      </section>
+          {loading &&
+            Array.from({ length: 3 }).map((_, i) => <SkeletonCard key={i} />)}
+        </section>
+      )}
 
       <div ref={loaderRef} className="h-10" />
     </section>

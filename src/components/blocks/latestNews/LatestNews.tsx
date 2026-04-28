@@ -14,8 +14,6 @@ export const LatestNews = () => {
       try {
         const res = await fetch(`${API_URL}/api/news?populate=*`);
         const data = await res.json();
-        console.log("Data fetched from Strapi:", data.data); // Verificar la estructura de los datos
-        console.log(data.data);
         setAllNews(data.data);
         setVisibleItems(data.data.slice(0, 3));
       } catch (err) {
@@ -27,6 +25,8 @@ export const LatestNews = () => {
   }, []);
 
   const news = allNews.slice(0, 3);
+  
+  if (!news.length) return null;
 
   return (
     <section className="w-full py-20">
