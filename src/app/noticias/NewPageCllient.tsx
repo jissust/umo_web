@@ -19,7 +19,7 @@ export default function NewsPage() {
     const fetchNews = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${API_URL}/api/news?populate=*`);
+        const res = await fetch(`${API_URL}/api/news?populate=*&sort=publishedAt:desc`);
         const data = await res.json();
         setAllNews(data.data);
         setVisibleItems(data.data.slice(0, ITEMS_PER_PAGE));
