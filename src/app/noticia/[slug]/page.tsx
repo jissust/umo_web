@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { newsMock } from "@/mocks/news";
 import { formatDate } from "@/utils/formatDate";
+import { MarkdownRenderer } from "@/components/ui/markdownRenderer/MarkdownRenderer";
 
 type Props = {
   params: {
@@ -33,7 +34,7 @@ async function getNoticia(slug: string) {
   const res = await fetch(
     `http://localhost:1337/api/news?filters[slug][$eq]=${slug}&populate=*`,
     {
-      cache: "no-store", // o "force-cache" si querés cachear
+      cache: "no-store",
     },
   );
 
@@ -41,7 +42,7 @@ async function getNoticia(slug: string) {
 
   const data = await res.json();
 
-  return data.data[0]; // 👈 importante
+  return data.data[0];
 }
 
 export default async function NoticiaDetalle({ params }: Props) {
@@ -69,7 +70,7 @@ export default async function NoticiaDetalle({ params }: Props) {
           alt={noticia.title}
           unoptimized
           fill
-          className="object-cover"
+          className="object-scale-down"
         />
       </figure>
 
@@ -78,7 +79,7 @@ export default async function NoticiaDetalle({ params }: Props) {
       </time>
 
       <section className="mt-4 text-white leading-relaxed space-y-4 text-sm md:text-base">
-        <p>{noticia.content}</p>
+          <MarkdownRenderer content={noticia.content} />
       </section>
     </article>
   );
