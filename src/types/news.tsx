@@ -1,11 +1,11 @@
 export type NewsItem = {
   id: number;
   slug: string;
-  image: {
-    url: string;
-  };
-  date: string;
+  image: [
+    {url: string;}
+  ];
+  publishedAt: string;
   title: string;
-  description: string;
+  excerpt: string;
   text?: string;
 };

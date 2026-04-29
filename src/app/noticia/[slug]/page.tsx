@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { newsMock } from "@/mocks/news";
 import { formatDate } from "@/utils/formatDate";
 import { MarkdownRenderer } from "@/components/ui/markdownRenderer/MarkdownRenderer";
 
@@ -13,18 +12,18 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const noticia = newsMock.find((n) => n.slug === slug);
-
+  const noticia = await getNoticia(slug);
+  
   if (!noticia) return {};
 
   return {
     title: noticia.title,
-    description: noticia.description,
+    description: noticia.excerpt,
     openGraph: {
       title: noticia.title,
       type: "article",
       url: `https://umocalador.es/noticias/${noticia.slug}`,
-      description: noticia.description,
+      description: noticia.excerpt,
       images: `https://umocalador.es${noticia.image}`,
     },
   };
@@ -41,7 +40,6 @@ async function getNoticia(slug: string) {
   if (!res.ok) return null;
 
   const data = await res.json();
-
   return data.data[0];
 }
 

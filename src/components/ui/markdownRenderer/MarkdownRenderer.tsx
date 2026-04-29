@@ -62,7 +62,7 @@ export const MarkdownRenderer = ({ content }: Props) => {
 
         li: ({ children }) => <li>{children}</li>,
 
-        code({ inline, children }) {
+        code({ inline, children }: any) {
           return inline ? (
             <code className="bg-gray-800 px-1 py-0.5 rounded text-sm">
               {children}
