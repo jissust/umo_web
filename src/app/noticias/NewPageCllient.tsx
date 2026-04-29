@@ -6,35 +6,12 @@ import { SkeletonCard } from "@/components/ui/skeletons/SkeletonCard";
 
 const ITEMS_PER_PAGE = 6;
 
-export default function NewsPage() {
-  const [visibleItems, setVisibleItems] = useState<NewsItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [allNews, setAllNews] = useState<NewsItem[]>([]);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+export default function NewsPageClient( { initialNews }: { initialNews: NewsItem[] } ) {
+  const [allNews] = useState<NewsItem[]>(initialNews);
+  const [visibleItems, setVisibleItems] = useState<NewsItem[]>(initialNews.slice(0, ITEMS_PER_PAGE));
+  const [loading, setLoading] = useState(false);
 
   const loaderRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(
-          `${API_URL}/api/news?populate=*&sort=publishedAt:desc`,
-        );
-        const data = await res.json();
-        setAllNews(data.data);
-        setVisibleItems(data.data.slice(0, ITEMS_PER_PAGE));
-      } catch (err) {
-        console.error("Error fetching news:", err);
-      } finally {
-        setLoading(false);
-        setIsLoaded(true);
-      }
-    };
-
-    fetchNews();
-  }, []);
 
   const loadMore = useCallback(() => {
     if (loading) return;
@@ -47,7 +24,7 @@ export default function NewsPage() {
 
       setVisibleItems(nextItems);
       setLoading(false);
-    }, 800);
+    }, 1000);
   }, [loading, visibleItems, allNews]);
 
   useEffect(() => {
@@ -83,7 +60,7 @@ export default function NewsPage() {
         </p>
       </header>
 
-      {!loading && isLoaded && allNews.length === 0 && (
+      {!loading && allNews.length === 0 && (
         <div className="text-center text-white py-10">
           No hay noticias disponibles
         </div>

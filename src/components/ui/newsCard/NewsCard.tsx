@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { NewsItem } from "@/types/news";
@@ -9,6 +11,7 @@ type Props = {
 
 export const NewsCard = ({ item }: Props) => {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const imageUrl =
     item.image && item.image[0]
@@ -21,10 +24,14 @@ export const NewsCard = ({ item }: Props) => {
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <Image
             src={imageUrl}
-            unoptimized
             alt={item.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            unoptimized
+            onLoad={() => setIsLoaded(true)}
+            className={`
+    object-cover transition-all duration-700
+    ${isLoaded ? "opacity-100 blur-0" : "opacity-0 blur-md"}
+  `}
           />
         </div>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import NewsPageClient from "./NewPageCllient";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const metadata: Metadata = {
   title: "Noticias",
@@ -18,6 +19,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
-  return <NewsPageClient />;
+async function getInitialNews() {
+  const res = await fetch(
+    `${API_URL}/api/news?populate=*&sort=publishedAt:desc`,
+    {
+      cache: "no-store",
+    }
+  );
+
+  const data = await res.json();
+
+  return data.data || [];
+}
+
+export default async function Page() {
+  const initialNews = await getInitialNews();
+  console.log("initialNews:", initialNews);  
+  return <NewsPageClient initialNews={initialNews} />;
 }
