@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { formatDate } from "@/utils/formatDate";
 import { MarkdownRenderer } from "@/components/ui/markdownRenderer/MarkdownRenderer";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 type Props = {
   params: {
     slug: string;
@@ -31,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function getNoticia(slug: string) {
   const res = await fetch(
-    `http://localhost:1337/api/news?filters[slug][$eq]=${slug}&populate=*`,
+    `${API_URL}/api/news?filters[slug][$eq]=${slug}&populate=*`,
     {
       cache: "no-store",
     },
@@ -45,7 +47,6 @@ async function getNoticia(slug: string) {
 
 export default async function NoticiaDetalle({ params }: Props) {
   const { slug } = await params;
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const noticia = await getNoticia(slug);
 
   if (!noticia) return notFound();
