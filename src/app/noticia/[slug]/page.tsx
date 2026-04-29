@@ -66,7 +66,7 @@ export default async function NoticiaDetalle({ params }: Props) {
       {noticia.image && noticia.image[0] && (
         <figure className="mt-8 mb-4 relative w-full h-[300px] md:h-[400px]">
           <Image
-            src={`${API_URL}${noticia.image[0]?.url}`}
+            src={`${noticia.image[0]?.url}`}
             alt={noticia.title}
             unoptimized
             fill

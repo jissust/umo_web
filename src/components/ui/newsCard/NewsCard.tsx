@@ -15,7 +15,7 @@ export const NewsCard = ({ item }: Props) => {
 
   const imageUrl =
     item.image && item.image[0]
-      ? `${API_URL}${item.image[0].url}`
+      ? `${item.image[0].url}`
       : "/img/og-image.jpg";
 
   return (
