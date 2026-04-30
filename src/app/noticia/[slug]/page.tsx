@@ -49,6 +49,14 @@ export default async function NoticiaDetalle({ params }: Props) {
   const { slug } = await params;
   const noticia = await getNoticia(slug);
 
+  const rawUrl = noticia.image?.[0]?.url;
+
+  const imageUrl = rawUrl
+    ? rawUrl.startsWith("http")
+      ? rawUrl
+      : `${API_URL}${rawUrl}`
+    : "/img/og-image.jpg";
+
   if (!noticia) return notFound();
 
   return (
@@ -66,7 +74,7 @@ export default async function NoticiaDetalle({ params }: Props) {
       {noticia.image && noticia.image[0] && (
         <figure className="mt-8 mb-4 relative w-full h-[300px] md:h-[400px]">
           <Image
-            src={`${noticia.image[0]?.url}`}
+            src={imageUrl}
             alt={noticia.title}
             unoptimized
             fill
