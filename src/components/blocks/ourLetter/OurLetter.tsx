@@ -22,6 +22,11 @@ export const OurLetter = () => {
           borderColor="border border-[#F1DF7D] border-2"
           hoverBorderColor="hover:border-[#E19025] hover:border-2"
           target="_self"
+          eventData={{
+            event: "contact_click",
+            method: "letter_open",
+            location: "home",
+          }}
         >
           Ver carta →
         </ButtonLink>
