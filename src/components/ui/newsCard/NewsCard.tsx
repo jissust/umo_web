@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { NewsItem } from "@/types/news";
 import { formatDate } from "@/utils/formatDate";
+import { usePathname } from "next/navigation";
 
 type Props = {
   item: NewsItem;
@@ -12,6 +13,8 @@ type Props = {
 export const NewsCard = ({ item }: Props) => {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const [isLoaded, setIsLoaded] = useState(false);
+  const pathname = usePathname();
+  const lang = pathname.split("/")[1] || "es";
 
   const rawUrl = item.image?.[0]?.url;
 
@@ -23,7 +26,7 @@ export const NewsCard = ({ item }: Props) => {
 
   return (
     <article className="w-full sm:w-[320px] lg:w-[360px] group text-white">
-      <Link href={`/noticia/${item.slug}`} className="block">
+      <Link href={`/${lang}/noticia/${item.slug}`} className="block">
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <Image
             src={imageUrl}

@@ -5,11 +5,13 @@ import { usePathname } from "next/navigation";
 export const NavLinks = () => {
   const pathname = usePathname();
 
+  const lang = pathname.split("/")[1] || "es";
+
   const isActive = (path: string) => {
     if (path === "/noticias") {
-      return pathname === "/noticias" || pathname.startsWith("/noticia/");
+      return pathname === `/${lang}/noticias` || pathname.startsWith(`/${lang}/noticia/`);
     }
-    return pathname === path;
+    return pathname === `/${lang}${path}`;
   };
 
   const linkClass = (path: string) =>
@@ -19,13 +21,13 @@ export const NavLinks = () => {
 
   return (
     <>
-      <Link href="/carta" className={linkClass("/carta")}>
+      <Link href={`/${lang}/carta`} className={linkClass("/carta")}>
         Carta
       </Link>
-      <Link href="/contacto" className={linkClass("/contacto")}>
+      <Link href={`/${lang}/contacto`} className={linkClass("/contacto")}>
         Contacto
       </Link>
-      <Link href="/noticias" className={linkClass("/noticias")}>
+      <Link href={`/${lang}/noticias`} className={linkClass("/noticias")}>
         Noticias
       </Link>
     </>
