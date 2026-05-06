@@ -40,7 +40,7 @@ export const LatestNews = ({ translations }: Props) => {
         </h1>
         <div className="flex flex-wrap justify-center gap-8">
           {news.map((item) => (
-            <NewsCard key={item.id} item={item} />
+            <NewsCard key={item.id} item={item} translations={translations} />
           ))}
         </div>
       </div>

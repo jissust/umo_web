@@ -26,7 +26,7 @@ export const Footer = () => {
 
         <div className="flex justify-center h-full">
           <h2 className="text-2xl font-bold">
-            <Link href="/" className="hover:text-gray-300">
+            <Link href={`/${lang}`} className="hover:text-gray-300">
               <Image
                 src="/img/logo_blanco_554x718.png"
                 alt="UMO logo"
