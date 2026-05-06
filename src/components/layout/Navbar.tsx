@@ -6,6 +6,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { NavLinks } from "@/components/ui/navigation/NavLinks";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { LanguageSwitcher } from "@/components/ui/languageSwitcher/LanguageSwitcher ";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,19 +28,21 @@ export const Navbar = () => {
             />
           </Link>
         </h1>
-
+        
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
-
-        <div className="hidden md:flex gap-6 text-md">
+        
+        <div className="hidden items-center md:flex gap-6 text-md">
           <NavLinks />
+          <LanguageSwitcher />
         </div>
       </div>
 
       {isOpen && (
         <div className="md:hidden mt-4 flex flex-col gap-4">
           <NavLinks />
+          <LanguageSwitcher />
         </div>
       )}
     </nav>
