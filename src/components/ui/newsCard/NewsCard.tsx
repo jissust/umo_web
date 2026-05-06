@@ -10,7 +10,7 @@ type Props = {
   item: NewsItem;
 };
 
-export const NewsCard = ({ item }: Props) => {
+export const NewsCard = ({ item, translations }: Props & { translations: any }) => {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const [isLoaded, setIsLoaded] = useState(false);
   const pathname = usePathname();
@@ -53,7 +53,7 @@ export const NewsCard = ({ item }: Props) => {
           </p>
 
           <span className="inline-block mt-4 text-sm text-white group-hover:text-gray-300 transition">
-            Leer más →
+            {translations.news.card.read_more} →
           </span>
         </div>
       </Link>

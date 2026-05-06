@@ -35,6 +35,10 @@
   },
   "news": {
     "title": "News",
-    "description": "Find out about all the news and events."
+    "description": "Find out about all the news and events.",
+    "no_news": "No news available at the moment.",
+    "card" : {
+      "read_more": "Read more"    
+    }
   }
 }

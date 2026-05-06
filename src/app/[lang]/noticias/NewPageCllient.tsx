@@ -62,7 +62,7 @@ export default function NewsPageClient( { initialNews, translations }: { initial
 
       {!loading && allNews.length === 0 && (
         <div className="text-center text-white py-10">
-          {translations.news.noNews}
+          {translations.news.no_news}
         </div>
       )}
 
@@ -79,7 +79,7 @@ export default function NewsPageClient( { initialNews, translations }: { initial
         >
           {visibleItems.map((item) => (
             <div key={item.id} className="animate-fadeIn">
-              <NewsCard item={item} />
+              <NewsCard item={item} translations={translations} />
             </div>
           ))}
         </section>
