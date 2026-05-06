@@ -14,7 +14,7 @@ export default function Home() {
         <HeroVideo />
         <Presentation />
         <OurLetter />
-        {/*  <LatestNews /> */}
+        <LatestNews />
         <Map />
       </LoadingProvider>
     </>
