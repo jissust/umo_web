@@ -1,11 +1,22 @@
-// src/components/layout/Footer.tsx
+"use client";
 
 import Link from "next/link";
 import { FaInstagram, FaWhatsapp, FaPhone, FaMailBulk } from "react-icons/fa";
 import { NavLinks } from "@/components/ui/navigation/NavLinks";
+import { sendGTMEvent } from "@next/third-parties/google";
 import Image from "next/image";
+import { getDictionary } from "@/utils/getTranslation";
+import { usePathname } from "next/navigation";
 
 export const Footer = () => {
+  const pathname = usePathname();
+
+  const lang = pathname.split("/")[1] || "es";
+  const translations = getDictionary(lang);
+
+  const handleContactClick = (method: string) => {
+    sendGTMEvent({ event: "contact_click", method, location: "footer" });
+  };
   return (
     <footer className="w-full bg-black text-white">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
@@ -15,7 +26,7 @@ export const Footer = () => {
 
         <div className="flex justify-center h-full">
           <h2 className="text-2xl font-bold">
-            <Link href="/" className="hover:text-gray-300">
+            <Link href={`/${lang}`} className="hover:text-gray-300">
               <Image
                 src="/img/logo_blanco_554x718.png"
                 alt="UMO logo"
@@ -29,13 +40,14 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h2 className="pb-4 font-semibold text-lg text-center">Contacto</h2>
+          <h2 className="pb-4 font-semibold text-lg text-center">{translations.footer.contact}</h2>
           <div className="flex gap-4 text-center pb-8 justify-center">
             <a
               href="https://www.instagram.com/umo.calador26"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-300 text-xl"
+              onClick={() => handleContactClick("instagram")}
             >
               <FaInstagram />
             </a>
@@ -44,6 +56,7 @@ export const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-300 text-xl"
+              onClick={() => handleContactClick("whatsapp")}
             >
               <FaWhatsapp />
             </a>
@@ -52,6 +65,7 @@ export const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-300"
+              onClick={() => handleContactClick("phone")}
             >
               <FaPhone />
             </a>
@@ -60,12 +74,18 @@ export const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-300 text-xl"
+              onClick={() => handleContactClick("email")}
             >
               <FaMailBulk />
             </a>
           </div>
-          <h2 className="pt-4 font-semibold text-lg text-center border-t-1">Ubicación</h2>
-          <p className="text-sm text-center"><b>UMO FIRE STEAKHOUSE CALA D'OR</b> <br />Calle de Sa Fonteta, 11, 07660 Cala d'Or, Balearic Islands</p>
+          <h2 className="pt-4 font-semibold text-lg text-center border-t-1">
+            {translations.footer.location}
+          </h2>
+          <p className="text-sm text-center">
+            <b>UMO FIRE STEAKHOUSE CALA D'OR</b> <br />
+            Calle de Sa Fonteta, 11, 07660 Cala d'Or, Balearic Islands
+          </p>
         </div>
       </div>
     </footer>

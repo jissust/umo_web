@@ -1,15 +1,19 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getDictionary } from "@/utils/getTranslation";
 
 export const NavLinks = () => {
   const pathname = usePathname();
 
+  const lang = pathname.split("/")[1] || "es";
+  const translations = getDictionary(lang);
+
   const isActive = (path: string) => {
     if (path === "/noticias") {
-      return pathname === "/noticias" || pathname.startsWith("/noticia/");
+      return pathname === `/${lang}/noticias` || pathname.startsWith(`/${lang}/noticia/`);
     }
-    return pathname === path;
+    return pathname === `/${lang}${path}`;
   };
 
   const linkClass = (path: string) =>
@@ -19,14 +23,14 @@ export const NavLinks = () => {
 
   return (
     <>
-      <Link href="/carta" className={linkClass("/carta")}>
-        Carta
+      <Link href={`/${lang}/carta`} className={linkClass("/carta")}>
+        {translations.navigation.letter}
       </Link>
-      <Link href="/contacto" className={linkClass("/contacto")}>
-        Contacto
+      <Link href={`/${lang}/contacto`} className={linkClass("/contacto")}>
+        {translations.navigation.contact}
       </Link>
-      <Link href="/noticias" className={linkClass("/noticias")}>
-        Noticias
+      <Link href={`/${lang}/noticias`} className={linkClass("/noticias")}>
+        {translations.navigation.news}
       </Link>
     </>
   );

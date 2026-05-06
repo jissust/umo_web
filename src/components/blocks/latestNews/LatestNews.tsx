@@ -1,16 +1,46 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { NewsCard } from "@/components/ui/newsCard/NewsCard";
-import { newsMock } from "@/mocks/news";
+import { NewsItem } from "@/types/news";
 
-const news = newsMock.slice(0, 3);
+type Props = {
+  translations: any;
+}
 
-export const LatestNews = () => {
+export const LatestNews = ({ translations }: Props) => {
+  const [allNews, setAllNews] = useState<NewsItem[]>([]);
+  const [visibleItems, setVisibleItems] = useState<NewsItem[]>([]);
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const res = await fetch(`${API_URL}/api/news?populate=*&sort=publishedAt:desc`);
+        const data = await res.json();
+        setAllNews(data.data);
+        setVisibleItems(data.data.slice(0, 3));
+      } catch (err) {
+        console.error("Error fetching news:", err);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
+  const news = allNews.slice(0, 3);
+  
+  if (!news.length) return null;
+
   return (
     <section className="w-full py-20">
       <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-4xl md:text-6xl font-bold flex justify-center pb-10 text-gold">Noticias</h1>
+        <h1 className="text-4xl md:text-6xl font-bold flex justify-center pb-10 text-gold">
+          {translations.home.latest_news.title}
+        </h1>
         <div className="flex flex-wrap justify-center gap-8">
           {news.map((item) => (
-            <NewsCard key={item.id} item={item} />
+            <NewsCard key={item.id} item={item} translations={translations} />
           ))}
         </div>
       </div>

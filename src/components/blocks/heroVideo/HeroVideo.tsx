@@ -3,13 +3,15 @@ import { ButtonLink } from "@/components/ui/buttonLink/ButtonLink";
 import Image from "next/image";
 import { useLoading } from "@/context/LoadingContext";
 
+type Props = {
+  translations: any;
+}
 
-export const HeroVideo = () => {
+export const HeroVideo = ({ translations }: Props) => {
   const { setIsLoading } = useLoading();
 
   return (
     <section className="relative w-full h-[90vh]">
-
       <video
         autoPlay
         muted
@@ -42,8 +44,13 @@ export const HeroVideo = () => {
             borderColor="border border-[#F1DF7D] border-2"
             hoverBorderColor="hover:border-[#E19025] hover:border-2"
             target="_blank"
+            eventData={{
+              event: "contact_click",
+              method: "whatsapp",
+              location: "home",
+            }}
           >
-            Reservar →
+            {translations.home.hero.text_button} →
           </ButtonLink>
         </div>
       </div>

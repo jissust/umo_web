@@ -3,29 +3,29 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { NewsCard } from "@/components/ui/newsCard/NewsCard";
 import { NewsItem } from "@/types/news";
 import { SkeletonCard } from "@/components/ui/skeletons/SkeletonCard";
-import { newsMock } from "@/mocks/news";
 
 const ITEMS_PER_PAGE = 6;
 
-export default function NewsPage() {
-  const [visibleItems, setVisibleItems] = useState<NewsItem[]>([]);
+export default function NewsPageClient( { initialNews, translations }: { initialNews: NewsItem[]; translations: any } ) {
+  const [allNews] = useState<NewsItem[]>(initialNews);
+  const [visibleItems, setVisibleItems] = useState<NewsItem[]>(initialNews.slice(0, ITEMS_PER_PAGE));
   const [loading, setLoading] = useState(false);
 
   const loaderRef = useRef<HTMLDivElement | null>(null);
 
   const loadMore = useCallback(() => {
     if (loading) return;
-    if (visibleItems.length >= newsMock.length) return;
+    if (visibleItems.length >= allNews.length) return;
 
     setLoading(true);
 
     setTimeout(() => {
-      const nextItems = newsMock.slice(0, visibleItems.length + ITEMS_PER_PAGE);
+      const nextItems = allNews.slice(0, visibleItems.length + ITEMS_PER_PAGE);
 
       setVisibleItems(nextItems);
       setLoading(false);
-    }, 800);
-  }, [loading, visibleItems]);
+    }, 1000);
+  }, [loading, visibleItems, allNews]);
 
   useEffect(() => {
     if (!loaderRef.current) return;
@@ -53,15 +53,22 @@ export default function NewsPage() {
     <section className="min-h-screen max-w-7xl mx-auto px-6 pt-28 pb-6">
       <header>
         <h1 className="text-4xl md:text-6xl font-bold flex justify-center pb-5 text-gold">
-          Noticias
+          {translations.news.title}
         </h1>
         <p className="flex justify-center pb-5 text-sm md:text-base text-white">
-          Enterate de todas las novedades y eventos.
+          {translations.news.description}
         </p>
       </header>
 
-      <section
-        className="
+      {!loading && allNews.length === 0 && (
+        <div className="text-center text-white py-10">
+          {translations.news.no_news}
+        </div>
+      )}
+
+      { !loading && allNews.length > 0 && (
+        <section
+          className="
             grid 
             grid-cols-1 
             sm:grid-cols-2 
@@ -69,16 +76,22 @@ export default function NewsPage() {
             gap-8 
             justify-items-center
           "
-      >
-        {visibleItems.map((item) => (
-          <div key={item.id} className="animate-fadeIn">
-            <NewsCard item={item} />
-          </div>
-        ))}
+        >
+          {visibleItems.map((item) => (
+            <div key={item.id} className="animate-fadeIn">
+              <NewsCard item={item} translations={translations} />
+            </div>
+          ))}
+        </section>
+      )}
 
-        {loading &&
-          Array.from({ length: 3 }).map((_, i) => <SkeletonCard key={i} />)}
-      </section>
+      {loading && (
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          {Array.from({ length: ITEMS_PER_PAGE }).map((_, i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </section>
+      )}
 
       <div ref={loaderRef} className="h-10" />
     </section>

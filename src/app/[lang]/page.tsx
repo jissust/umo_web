@@ -5,16 +5,20 @@ import { Map } from "@/components/blocks/map/Map";
 import { LatestNews } from "@/components/blocks/latestNews/LatestNews";
 import { LoadingProvider } from "@/context/LoadingContext";
 import { Preloader } from "@/components/ui/preloader/Preloader";
+import { getDictionary } from "@/utils/getTranslation";
 
-export default function Home() {
+export default async function Home({ params }: { params: { lang: string } }) {
+  const { lang } = await params; 
+  const translations = await getDictionary(lang);
+  
   return (
     <>
       <LoadingProvider>
-        <Preloader />
-        <HeroVideo />
-        <Presentation />
-        <OurLetter />
-        <LatestNews />
+        {/* <Preloader /> */} 
+        <HeroVideo translations={translations} />
+        <Presentation translations={translations}/>
+        <OurLetter translations={translations}/>
+        <LatestNews translations={translations}/>
         <Map />
       </LoadingProvider>
     </>

@@ -1,34 +1,26 @@
-import type { Metadata } from "next";
+
+"use client";
 import { Map } from "@/components/blocks/map/Map";
 import { FaInstagram, FaPhone, FaWhatsapp, FaMailBulk } from "react-icons/fa";
+import { sendGTMEvent } from "@next/third-parties/google";
 
-export const metadata: Metadata = {
-  title: "Contacto",
-  description: "Contáctanos para más información sobre nuestro restaurante.",
-  openGraph: {
-    title: "Contacto - UMO | Fire & Steakhouse",
-    description: "Contáctanos para más información sobre nuestro restaurante.",
-    url: "https://umocalador.es/contacto",
-    images: [
-      {
-        url: "https://umocalador.es/img/og-image.jpg",
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
-};
+type Props = {
+  translations: any;
+}
 
-export default function Contacto() {
+export default function NewPageContact({ translations }: Props) {
+  const handleContactClick = (method: string) => {
+    sendGTMEvent({ event: "contact_click", method, location: "contacto" });
+  };
+
   return (
     <section className="min-h-screen max-w-7xl mx-auto px-6 pt-28 pb-6 ">
       <header>
         <h1 className="text-4xl md:text-6xl font-bold pb-2 text-gold text-center">
-          Contacto
+          {translations.contact.title}
         </h1>
         <p className="text-sm md:text-base pb-5 text-white text-center">
-          Podés encontrarnos o comunicarte con nosotros a través de los
-          siguientes medios.
+          {translations.contact.description}
         </p>
       </header>
       <section className="gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 pb-10">
@@ -42,6 +34,7 @@ export default function Contacto() {
               rounded-xl px-6 py-12
               transition hover:bg-gray-700
               h-full gap-5"
+            onClick={() => handleContactClick("whatsapp")}
           >
             <FaWhatsapp className="text-4xl" />
             <span>+34 641 46 78 80</span>
@@ -55,6 +48,8 @@ export default function Contacto() {
               rounded-xl px-6 py-12
               transition hover:bg-gray-700
               h-full gap-5"
+            onClick={() => handleContactClick("phone")}
+
           >
             <FaPhone className="text-4xl" />
             <span>+34 871 612 605</span>
@@ -70,6 +65,7 @@ export default function Contacto() {
               rounded-xl px-6 py-12
               transition hover:bg-gray-700
               h-full gap-5"
+            onClick={() => handleContactClick("instagram")}
           >
             <FaInstagram className="text-4xl" />
             <span>@umo.calador26</span>
@@ -84,6 +80,7 @@ export default function Contacto() {
               rounded-xl px-6 py-12
               transition hover:bg-gray-700
               h-full gap-5"
+            onClick={() => handleContactClick("email")}
           >
             <FaMailBulk className="text-4xl" />
             <span>info@umocalador.es</span>
