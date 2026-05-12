@@ -52,7 +52,7 @@ export default function NewsPageClient( { initialNews, translations }: { initial
   return (
     <section className="min-h-screen max-w-7xl mx-auto px-6 pt-28 pb-6">
       <header>
-        <h1 className="text-4xl md:text-6xl font-bold flex justify-center pb-5 text-gold" data-aos="fade-up" data-aos-duration="500">
+        <h1 className="text-4xl md:text-7xl font-bold flex justify-center pb-5 text-gold" data-aos="fade-up" data-aos-duration="500">
           {translations.news.title}
         </h1>
         <p className="flex justify-center pb-5 text-sm md:text-base text-white" data-aos="fade-up" data-aos-duration="750">

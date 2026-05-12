@@ -13,8 +13,8 @@ export const OurLetter = ({ translations }: Props) => {
 
   return (
     <section className="w-full py-24 text-white our_letter relative" >
-      <div className="max-w-3xl mx-auto px-6 text-center relative z-10" data-aos="fade-up" data-aos-duration="500">
-        <h1 className="text-4xl md:text-6xl font-bold">
+      <div className="mx-auto px-6 text-center relative z-10" data-aos="fade-up" data-aos-duration="500">
+        <h1 className="text-4xl md:text-7xl font-bold">
           {translations.home.our_letter.title}
         </h1>
 

@@ -11,9 +11,9 @@ export const Presentation = ({ translations }: Props) => {
     <section className="w-full py-30 presentation relative overflow-hidden" >
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/100 to-transparent" ></div>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center">
           <div data-aos="fade-right" data-aos-offset="300">
-            <h1 className="text-4xl md:text-6xl font-bold text-gold">{translations.home.presentation.title}</h1>
+            <h1 className="text-4xl md:text-7xl font-bold text-gold">{translations.home.presentation.title}</h1>
 
             <div className="mt-4 text-white leading-relaxed text-sm md:text-base">
               <MarkdownRenderer content={translations.home.presentation.description} />
