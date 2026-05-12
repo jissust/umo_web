@@ -59,6 +59,7 @@ export const HeroVideo = ({ translations }: Props) => {
           </ButtonLink>
         </div>
       </div>
+      
     </section>
   );
 };
