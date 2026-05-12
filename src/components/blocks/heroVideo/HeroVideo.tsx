@@ -9,7 +9,7 @@ type Props = {
 
 export const HeroVideo = ({ translations }: Props) => {
   const { setIsLoading } = useLoading();
-
+  
   return (
     <section className="relative w-full h-[100vh]">
       <video
