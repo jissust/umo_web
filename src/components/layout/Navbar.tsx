@@ -25,19 +25,12 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`w-full text-white p-6 fixed top-0 z-50 transition-colors duration-300 ${scrolled || isOpen ? "bg-black" : "bg-transparent"}`}
+      className={`w-full text-white px-6 py-2 fixed top-0 z-50 transition-colors duration-300 ${scrolled || isOpen ? "bg-black" : "bg-transparent"}`}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3">
-        <h1 className="text-xl font-bold justify-self-start">
+        <h1 className="text-xl font-bold justify-self-start font-cormorant text-[60px]">
           <Link href={`/${lang}`} className="hover:text-gray-300">
-            <Image
-              src="/img/logo_714x195.png"
-              alt="UMO logo"
-              width={150}
-              height={150}
-              priority
-              style={{ display: "block", margin: "0 auto" }}
-            />
+            UMO
           </Link>
         </h1>
 

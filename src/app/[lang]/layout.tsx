@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -9,6 +9,12 @@ import { AosProvider } from "@/components/providers/AosProvider";
 const geistMontserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -66,7 +72,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${geistMontserrat.variable} h-full antialiased`}
+      className={`${geistMontserrat.variable} ${cormorant.variable} h-full antialiased`}
     >
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || ""} />
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
