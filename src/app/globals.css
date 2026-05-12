@@ -37,6 +37,22 @@ body {
   background-attachment: fixed;
 }
 
+.presentation {
+  background-image: url("/img/presentation_2.jpeg");
+  background-size: initial;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.our_letter {
+  background-image: url("/img/our_letter_1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .text-gold {
   @apply bg-gradient-to-b from-[#F1DF7D] to-[#E19025] bg-clip-text text-transparent;
 }
