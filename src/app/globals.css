@@ -20,7 +20,7 @@
   }
 }
 
-h1 {
+h1, h2 {
   font-family: var(--font-cormorant);
   text-transform: uppercase;
 }
@@ -54,6 +54,14 @@ body {
   background-image: url("/img/our_letter.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.our_chef {
+  background-image: url("/img/presentation.jpeg");
+  background-size: initial;
+  background-position: center left;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

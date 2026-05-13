@@ -6,6 +6,7 @@ import { LatestNews } from "@/components/blocks/latestNews/LatestNews";
 import { LoadingProvider } from "@/context/LoadingContext";
 import { Preloader } from "@/components/ui/preloader/Preloader";
 import { getDictionary } from "@/utils/getTranslation";
+import { OurChef } from "@/components/blocks/ourChef/OurChef";
 
 export default async function Home({ params }: { params: { lang: string } }) {
   const { lang } = await params; 
@@ -18,6 +19,7 @@ export default async function Home({ params }: { params: { lang: string } }) {
         <HeroVideo translations={translations} videoSrc="/hero_video.mp4" showLogo={true} />
         <Presentation translations={translations}/>
         <OurLetter translations={translations}/>
+        <OurChef translations={translations}/>
         <LatestNews translations={translations}/>
         <Map />
       </LoadingProvider>
