@@ -11,7 +11,16 @@ export const OurChef = ({ translations }: Props) => {
       <div className="absolute inset-0 bg-gradient-to-l from-black via-black/100 to-transparent"></div>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-          <div></div>
+          <div className="hidden md:flex">
+            <div className="relative w-full max-w-md h-[500px] overflow-hidden">
+              <Image
+                src="/img/presentation.jpeg"
+                alt="Our Chef"
+                fill
+                className="object-cover object-center"
+              />
+            </div>
+          </div>
           <div data-aos="fade-left" data-aos-offset="300">
             <h1 className="text-4xl md:text-7xl font-bold text-gold">
               {translations.home.our_chef.title}
