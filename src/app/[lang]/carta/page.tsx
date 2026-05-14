@@ -75,7 +75,7 @@ export default async function CartaPage({
 
   return (
     <section className="min-h-screen text-white">
-      <HeroVideo translations={translations} videoSrc="/hero_video.mp4" showLogo={false} showText={translations.letter.title} />
+      <HeroVideo translations={translations} videoSrc="/hero_video_letter.mp4" showLogo={false} showText={translations.letter.title} />
       {/**<header>
         <Image
           src="/img/logo_blanco_554x718.png"
@@ -97,7 +97,7 @@ export default async function CartaPage({
         data-aos-duration="1250"
       >
         <p
-          className="flex justify-center pb-10 text-sm md:text-base"
+          className="flex justify-center pb-10 text-sm md:text-base font-semibold"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
