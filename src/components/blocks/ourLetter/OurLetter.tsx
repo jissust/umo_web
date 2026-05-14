@@ -18,7 +18,7 @@ export const OurLetter = ({ translations }: Props) => {
           {translations.home.our_letter.title}
         </h1>
 
-        <p className="mt-4 text-white text-sm md:text-base">
+        <p className="mt-4 text-white text-sm md:text-base font-semibold">
           {translations.home.our_letter.description}
         </p>
 

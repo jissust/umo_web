@@ -55,13 +55,16 @@ export const HeroVideo = ({
         >
           <div className="max-w-7xl mx-auto px-6 w-full flex-col items-center gap-6 text-center">
             <Image
-              src="/img/umo_logo_652x883.png"
+              src="/img/logo_text.png"
               alt="UMO logo"
               width={350}
               height={350}
               priority
               style={{ display: "block", margin: "0 auto" }}
             />
+            <h1 className="text-white text-2xl font-bold">
+              {translations.home.hero.text}
+            </h1>
             <ButtonLink
               href="https://wa.me/34641467880"
               bgColor="bg-gradient-to-b from-[#F1DF7D] to-[#E19025]"

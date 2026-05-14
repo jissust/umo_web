@@ -41,7 +41,7 @@ export const OurChef = ({ translations }: Props) => {
               </div>
             </div>
 
-            <div className="mt-4 text-white leading-relaxed text-sm md:text-base">
+            <div className="mt-4 text-white leading-relaxed text-sm md:text-base font-semibold">
               <MarkdownRenderer
                 content={translations.home.our_chef.description}
               />

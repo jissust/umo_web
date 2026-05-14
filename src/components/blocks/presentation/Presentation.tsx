@@ -15,7 +15,7 @@ export const Presentation = ({ translations }: Props) => {
           <div data-aos="fade-right" data-aos-offset="300">
             <h1 className="text-4xl md:text-7xl font-bold text-gold">{translations.home.presentation.title}</h1>
 
-            <div className="mt-4 text-white leading-relaxed text-sm md:text-base">
+            <div className="mt-4 text-white leading-relaxed text-sm md:text-base font-semibold">
               <MarkdownRenderer content={translations.home.presentation.description} />
             </div>
           </div>
