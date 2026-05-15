@@ -5,6 +5,11 @@
     "contact": "Contact",
     "news": "News"
   },
+  "cookies":{
+    "text": "We use cookies to improve your experience, personalize content, and analyze our website traffic. By continuing to browse, you agree to the use of cookies in accordance with our privacy policy.",
+    "accept": "Accept",
+    "reject": "Reject"
+  },
   "home": {
     "hero": {
       "text_button": "Reserve",
