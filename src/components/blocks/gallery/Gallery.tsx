@@ -100,24 +100,15 @@ export const Gallery = ({ items }: Props) => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ duration: 0.25 }}
-              className="bg-white max-w-4xl w-full gap-4"
+              className="max-w-5xl max-h-[85vh] w-full gap-4"
             >
-              <div className="bg-white max-w-4xl mx-auto p-6 gap-4">
-                <div className="relative overflow-hidden">
-                  <Image
-                    src={selected.image}
-                    alt={selected.title}
-                    width={1200}
-                    height={800}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-                {/**<div>
-                  <div>
-                    <h2 className="text-xl font-bold pt-6">{selected.title}</h2>
-                  </div>
-                </div>*/}
-              </div>
+<Image
+                  src={selected.image}
+                  alt={selected.title}
+                  width={1200}
+                  height={800}
+                  className="mx-auto h-auto max-w-full max-h-[85vh] object-contain"
+                />
             </motion.div>
           </motion.div>
         )}
