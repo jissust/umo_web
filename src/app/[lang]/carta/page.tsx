@@ -24,7 +24,7 @@ const categories: Record<Lang, Category[]> = {
   ],
   en: [
     {
-      name: "Tickets",
+      name: "Menu",
       icon: <FaUtensils />,
       file: "/carta/pdf/menu/en.pdf",
     },
