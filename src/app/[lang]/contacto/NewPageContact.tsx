@@ -38,7 +38,7 @@ export default function NewPageContact({ translations }: Props) {
           >
             <FaWhatsapp className="text-4xl" />
             <span className="font-semibold">+34 641 46 78 80</span>
-          </a>
+          </a> 
         </address>
         <address className="not-italic">
           <a
