@@ -2,6 +2,7 @@
 
 import { useCookieConsent } from "@/context/CookieConsentContext";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+import { MetaPixel } from "./MetaPixel";
 
 export const Analytics = () => {
   const { consent } = useCookieConsent();
@@ -12,7 +13,8 @@ export const Analytics = () => {
   return (
     <>
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || ""} />
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
+      {/*<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} /> */}
+      <MetaPixel />
     </>
   );
 };

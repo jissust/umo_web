@@ -24,6 +24,8 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL("https://umocalador.es/"),
 
+  applicationName: "UMO | Fire & Steakhouse - Cala D'Or",
+
   title: {
     default: "UMO | Fire & Steakhouse - Cala D'Or",
     template: "%s | UMO - Fire & Steakhouse - Cala D'Or",
@@ -41,8 +43,8 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "UMO | Fire & Steakhouse",
-    description: "Disfrutá de una experiencia gastronómica única en Cala D'Or.",
     url: "https://umocalador.es/",
+    description: "Disfrutá de una experiencia gastronómica única en Cala D'Or.",
     siteName: "UMO Restaurant",
     images: [
       {
