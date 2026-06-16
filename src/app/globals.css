@@ -44,7 +44,7 @@ body {
 }
 
 .presentation {
-  background-image: url("/img/presentation.jpeg");
+  background-image: url("/img/presentation/presentation.jpg");
   background-size: initial;
   background-position: right center;
   background-repeat: no-repeat;
@@ -52,7 +52,7 @@ body {
 }
 
 .our_letter {
-  background-image: url("/img/our_letter.png");
+  background-image: url("/img/our_letter/our_letter.jpg"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -60,7 +60,7 @@ body {
 }
 
 .our_chef {
-  background-image: url("/img/presentation.jpeg");
+  background-image: url("/img/our_chef/our_chef.png"); 
   background-size: initial;
   background-position: center left;
   background-repeat: no-repeat;

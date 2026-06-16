@@ -1,26 +1,50 @@
 [
   {
     "id": 1,
-    "image": "/img/gallery_home/1.jpeg",
+    "image": "/img/gallery_home/1.jpg",
     "title": "Lorem ipsum 1",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
   },
   {
     "id": 2,
-    "image": "/img/gallery_home/2.jpeg",
+    "image": "/img/gallery_home/2.jpg",
     "title": "Lorem ipsum 2",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
   },
   {
     "id": 3,
-    "image": "/img/gallery_home/3.jpeg",
+    "image": "/img/gallery_home/3.jpg",
     "title": "Lorem ipsum 3",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
   },
   {
     "id": 4,
-    "image": "/img/gallery_home/fish.jpg",
+    "image": "/img/gallery_home/4.jpg",
     "title": "Lorem ipsum 4",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  },
+  {
+    "id": 5,
+    "image": "/img/gallery_home/5.jpg",
+    "title": "Lorem ipsum 5",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  },
+  {
+    "id": 6,
+    "image": "/img/gallery_home/6.jpg",
+    "title": "Lorem ipsum 6",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  },
+  {
+    "id": 7,
+    "image": "/img/gallery_home/7.jpg",
+    "title": "Lorem ipsum 7",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  },
+  {
+    "id": 8,
+    "image": "/img/gallery_home/8.jpg",
+    "title": "Lorem ipsum 8",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
   }
 ]

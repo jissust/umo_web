@@ -14,7 +14,7 @@ export const OurChef = ({ translations }: Props) => {
           <div className="hidden md:flex">
             <div className="relative w-full max-w-md h-[500px] overflow-hidden">
               <Image
-                src="/img/presentation.jpeg"
+                src="/img/our_chef/our_chef.png"
                 alt="Our Chef"
                 fill
                 className="object-cover object-center" data-aos="fade-right" data-aos-offset="300"
@@ -33,7 +33,7 @@ export const OurChef = ({ translations }: Props) => {
             <div className="flex justify-center md:hidden my-8">
               <div className="relative w-full max-w-md h-[400px] overflow-hidden">
                 <Image
-                  src="/img/presentation.jpeg"
+                  src="/img/our_chef/our_chef.png"
                   alt="Our Chef"
                   fill
                   className="object-cover object-center"
